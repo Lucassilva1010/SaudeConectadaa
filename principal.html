@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .header-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333333;
+            margin-left: 10px;
+        }
+
+        .header-menu {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-menu-item {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0099ff;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-item {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: 100px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .section-item-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+
+        .section-item-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .section-item-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .section-item-dosage {
+            font-size: 14px;
+            color: #999999;
+        }
+
+        .section-item-frequency {
+            font-size: 14px;
+            color: #999999;
+        }
+
+        .section-item-time {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0099ff;
+        }
+
+        .section-item-reminder {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-item-reminder-button {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0099ff;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .section-item-notification {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-item-notification-text {
+            font-size: 16px;
+            color: #333333;
+        }
+
+        .section-item-notification-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+
+        .section-item-critical {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-item-critical-text {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff0000;
+        }
+
+        .section-item-critical-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-info">
+                <img src="src/img/login.avif" alt="User" class="header-image">
+                <div class="header-name">João da Silva</div>
+            </div>
+            <div class="header-menu">
+                <button class="header-menu-item"><a href="Promo.html">💰</a></button>
+                <button class="header-menu-item"><a href="info.html">📄</a></button>
+                <button class="header-menu-item"><a href="noticias.html">📺</a></button>
+                <button class="header-menu-item"><a href="perfil.html">⚙️</a></button>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Medicamentos</div>
+            <div class="section-content">
+                <div class="section-item">
+                    <div class="section-item-info">
+                        <div class="section-item-name"><a href="detalhesMedicamentos.html">Paracetamol</a></div>
+                        <div class="section-item-dosage">500 mg</div>
+                        <div class="section-item-frequency"><a href="rastroDoses.html">Dosagens</a></div>
+                    </div>
+                    <img src="src/img/paracetamol.webp" alt="Metformina" class="section-item-icon">
+                </div>
+                <div class="section-item">
+                    <div class="section-item-info">
+                        <div class="section-item-name"><a href="">Losartana</a></div>
+                        <div class="section-item-dosage">50 mg</div>
+                        <div class="section-item-frequency"><a href="rastroDoses.html">Dosagens</a></div>
+                    </div>
+                    <img src="src/Losartana.jpg" alt="Losartana" class="section-item-icon">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Lembretes</div>
+            <div class="section-content">
+                <div class="section-item">
+                    <div class="section-item-info">
+                        <div class="section-item-name">Paracetamol</div>
+                        <div class="section-item-time">08:00</div>
+                    </div>
+                    <div class="section-item-reminder">
+                        <button class="section-item-reminder-button">✔️</button>
+                        <button class="section-item-reminder-button">❌</button>
+                    </div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-info">
+                        <div class="section-item-name">Losartana</div>
+                        <div class="section-item-time">12:00</div>
+                    </div>
+                    <div class="section-item-reminder">
+                        <button class="section-item-reminder-button">✔️</button>
+                        <button class="section-item-reminder-button">❌</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Notificações</div>
+            <div class="section-content">
+                <div class="section-item">
+                    <div class="section-item-notification">
+                        <div class="section-item-notification-text">Receita Online</div>
+                        <img src="src/img/prescription.webp" alt="Prescription" class="section-item-notification-icon">
+                    </div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-notification">
+                        <div class="section-item-notification-text">Consulta marcada para amanhã</div>
+                        <img src="src/img/1000_F_441981001_c9OPcAvSEBd92TsFgcZzbggzZvDsXCp2.jpg" alt="Calendar"
+                            class="section-item-notification-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Informações Críticas</div>
+            <div class="section-content">
+                <div class="section-item">
+                    <div class="section-item-critical">
+                        <div class="section-item-critical-text">Não tome Metformina com álcool</div>
+                        <img src="src/img/warning-warning-sign-icon-warning-sign-illustration-sign-red-warning-700-188633913.jpg"
+                            alt="Warning" class="section-item-critical-icon">
+                    </div>
+                </div>
+                <div class="section-item">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

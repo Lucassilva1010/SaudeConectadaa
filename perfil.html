@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 80px;
+            padding: 100px;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .header-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333333;
+            margin-left: 10px;
+        }
+
+        .header-id {
+            font-size: 18px;
+            color: #999999;
+            margin-left: 10px;
+        }
+
+        .header-button {
+            width: 120px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0099ff;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .section-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-item {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+
+        .section-item-label {
+            font-size: 16px;
+            color: #999999;
+            margin-bottom: 5px;
+        }
+
+        .section-item-value {
+            font-size: 16px;
+            color: #333333;
+        }
+
+        .header-menu {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-menu-item {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0099ff;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-menu">
+                <button class="header-menu-item"><a href="Promo.html">💰</a></button>
+                <button class="header-menu-item"><a href="info.html">📄</a></button>
+                <button class="header-menu-item"><a href="noticias.html">📺</a></button>
+                <button class="header-menu-item"><a href="perfil.html">⚙️</a></button>
+            </div>
+            <div class="header-info">
+                <img src="src/img/login.avif" alt="Patient" class="header-image">
+                <div class="header-name">João da Silva</div>
+                <div class="header-id">ID: 123456789</div>
+            </div>
+            <button class="header-button"><a href="editarPerfil.html" class="header-button">Editar Perfil</a></button>
+        </div>
+        <div class="section">
+            <div class="section-title">Dados Pessoais</div>
+            <div class="section-content">
+                <div class="section-item">
+                    <div class="section-item-label">Idade</div>
+                    <div class="section-item-value">35 anos</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Sexo</div>
+                    <div class="section-item-value">Masculino</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Estado Civil</div>
+                    <div class="section-item-value">Casado</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Endereço</div>
+                    <div class="section-item-value">Rua das Flores, 123, Simões - PI</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Telefone</div>
+                    <div class="section-item-value">(89) 99999-9999</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">E-mail</div>
+                    <div class="section-item-value">joao@gmail.com</div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Histórico Médico</div>
+            <div class="section-content">
+                <div class="section-item">
+                    <div class="section-item-label">Doenças Crônicas</div>
+                    <div class="section-item-value">Diabetes, Hipertensão</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Cirurgias</div>
+                    <div class="section-item-value">Apendicectomia, Herniorrafia</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Medicamentos em Uso</div>
+                    <div class="section-item-value">Metformina, Losartana</div>
+                    <div class="section-item-value"><a href="principal.html">Historico de medicamentos</a></div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Alergias</div>
+                    <div class="section-item-value">Penicilina, Camarão</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Vacinas</div>
+                    <div class="section-item-value">Febre Amarela, Hepatite B, Tríplice Viral</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Exames</div>
+                    <div class="section-item-value">Hemograma, Glicemia, Colesterol, Eletrocardiograma</div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Preferências</div>
+            <div class="section-content">
+                <div class="section-item">
+                    <div class="section-item-label">Horários</div>
+                    <div class="section-item-value">Manhã, Tarde</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Médicos</div>
+                    <div class="section-item-value">Dr. José, Dra. Maria</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Especialidades</div>
+                    <div class="section-item-value">Clínica Geral, Cardiologia, Endocrinologia</div>
+                </div>
+                <div class="section-item">
+                    <div class="section-item-label">Planos de Saúde</div>
+                    <div class="section-item-value">Unimed, Amil</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

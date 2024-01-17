@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreamento de Doses</title>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    select,
+    input,
+    textarea {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+        <a href="principal.html">Voltar</a>
+        <header>
+            <h1>Rastreamento de Doses</h1>
+        </header>
+        <form>
+            <label for="medicine-select">Selecione o Medicamento:</label>
+            <select id="medicine-select">
+                <option value="med1">Medicamento 1</option>
+                <option value="med2">Medicamento 2</option>
+                <!-- Adicione mais opções para outros medicamentos -->
+            </select>
+            <label for="dose-quantity">Quantidade:</label>
+            <input type="number" id="dose-quantity" min="1" max="10">
+            <label for="dose-taken">Dose Tomada:</label>
+            <input type="checkbox" id="dose-taken">
+            <label for="notes">Notas:</label>
+            <textarea id="notes" rows="4" placeholder="Adicione notas relevantes..."></textarea>
+            <button type="submit">Registrar Dose</button>
+        </form>
+    </div>
+</body>
+
+</html>

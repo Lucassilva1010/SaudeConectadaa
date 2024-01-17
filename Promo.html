@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Mini-Loja</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        /* Ajustes Pessoais e Configurações de Promoções Section */
+        .settings-section {
+            margin-bottom: 30px;
+        }
+
+        .settings-form {
+            display: flex;
+            justify-content: space-between;
+            /* Adicionado para alinhar os formulários lado a lado */
+        }
+
+        .settings-form form {
+            width: 48%;
+            /* Adicionado para manter uma margem entre os formulários */
+        }
+
+        .settings-form label {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .settings-form input,
+        .settings-form select {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .settings-form button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .settings-form button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Lojas Próximas Section */
+        .nearby-stores-section {
+            margin-top: 30px;
+        }
+
+        .store-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            /* Adicionado para criar um espaçamento entre as lojas */
+        }
+
+        .store-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            width: calc(33.33% - 20px);
+            /* Adicionado para exibir três lojas por linha */
+            margin-bottom: 20px;
+        }
+
+        .store-details {
+            padding: 10px;
+        }
+
+        .store-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .store-price {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="principal.html">Voltar</a>
+        <header>
+            <h1>Minha Mini-Loja</h1>
+        </header>
+
+        <!-- Ajustes Pessoais e Configurações de Promoções Section -->
+        <section class="settings-section">
+            <div class="settings-form">
+                <form>
+                    <h2>Ajustes Pessoais</h2>
+                    <label for="username">Nome de Usuário:</label>
+                    <input type="text" id="username" placeholder="Seu Nome de Usuário">
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Seu E-mail">
+
+                    <label for="password">Nova Senha:</label>
+                    <input type="password" id="password" placeholder="Digite sua Nova Senha">
+
+                    <label for="notification-preferences">Preferências de Notificação:</label>
+                    <select id="notification-preferences">
+                        <option value="on">Ativado</option>
+                        <option value="off">Desativado</option>
+                    </select>
+
+                    <button type="submit">Salvar Configurações</button>
+                </form>
+
+                <form>
+                    <h2>Configurações de Promoções</h2>
+                    <label for="promo-code">Código de Promoção:</label>
+                    <input type="text" id="promo-code" placeholder="Digite seu Código de Promoção">
+
+                    <label for="medication">Medicamento:</label>
+                    <select id="medication">
+                        <option value="med1">Medicamento 1</option>
+                        <option value="med2">Medicamento 2</option>
+                        <!-- Adicione mais opções para outros medicamentos -->
+                    </select>
+
+                    <label for="prescription">Prescrição Médica:</label>
+                    <input type="text" id="prescription" placeholder="Número da Prescrição Médica">
+
+                    <button type="submit">Aplicar Promoção</button>
+                </form>
+            </div>
+
+            <!-- Lojas Próximas Section -->
+            <section class="nearby-stores-section">
+                <h2>Lojas Próximas</h2>
+                <ul class="store-list" id="store-list">
+                    <!-- Dados de loja serão dinamicamente adicionados aqui com JavaScript -->
+                </ul>
+            </section>
+        </section>
+
+        <!-- ... (código anterior) ... -->
+
+        <script>
+            // Dados fictícios para ajustes pessoais
+            const userData = {
+                username: "Usuario123",
+                email: "usuario@example.com",
+                notificationPreferences: "on"
+            };
+
+            // Dados fictícios para promoções
+            const promoData = {
+                promoCode: "PROMO123",
+                medication: "Medicamento 1",
+                prescription: "123456"
+            };
+
+            // Dados fictícios para lojas próximas
+            const storeData = [
+                { name: "Farmácia A", address: "Rua A, 123", cep: "12345-678", price: 10.00 },
+                { name: "Farmácia B", address: "Rua B, 456", cep: "98765-432", price: 9.50 },
+                // Adicione mais lojas conforme necessário
+            ];
+
+            // Preencher dados de ajustes pessoais
+            document.getElementById('username').value = userData.username;
+            document.getElementById('email').value = userData.email;
+            document.getElementById('notification-preferences').value = userData.notificationPreferences;
+
+            // Preencher dados de configurações de promoções
+            document.getElementById('promo-code').value = promoData.promoCode;
+            document.getElementById('medication').value = promoData.medication;
+            document.getElementById('prescription').value = promoData.prescription;
+
+            // Função para adicionar lojas à lista
+            function populateStoreList() {
+                const storeList = document.getElementById('store-list');
+
+                storeData.forEach(store => {
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('store-item');
+
+                    const storeName = document.createElement('p');
+                    storeName.classList.add('store-name');
+                    storeName.textContent = store.name;
+
+                    const storeDetails = document.createElement('p');
+                    storeDetails.classList.add('store-details');
+                    storeDetails.textContent = `${store.address}, CEP: ${store.cep}`;
+
+                    const storePrice = document.createElement('p');
+                    storePrice.classList.add('store-price');
+                    storePrice.textContent = `Preço: R$ ${store.price.toFixed(2)}`;
+
+                    listItem.appendChild(storeName);
+                    listItem.appendChild(storeDetails);
+                    listItem.appendChild(storePrice);
+                    storeList.appendChild(listItem);
+                });
+            }
+
+            // Chamada à função para preencher a lista inicialmente (simulação)
+            populateStoreList();
+        </script>
+
+        <!-- ... (código posterior) ... -->
+
+    </div>
+</body>

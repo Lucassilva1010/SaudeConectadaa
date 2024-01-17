@@ -1,0 +1,159 @@
+<!-- Cria a estrutura básica do documento HTML -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Define o título da página -->
+    <title>Feed de Notícias sobre Saúde</title>
+    <!-- Define o estilo CSS da página -->
+    <style>
+        /* Define a cor de fundo do corpo da página */
+        body {
+            background-color: #F0F0F0;
+        }
+
+        /* Define o estilo do container do feed */
+        .container {
+            width: 80%;
+            /* Define a largura do container */
+            margin: 0 auto;
+            /* Centraliza o container na página */
+        }
+
+        /* Define o estilo do cabeçalho do feed */
+        .header {
+            text-align: center;
+            /* Alinha o texto ao centro */
+            font-family: Arial, sans-serif;
+            /* Define a fonte do texto */
+            font-size: 36px;
+            /* Define o tamanho da fonte */
+            color: #333333;
+            /* Define a cor da fonte */
+            margin-bottom: 20px;
+            /* Define a margem inferior */
+        }
+
+        /* Define o estilo de cada notícia do feed */
+        .news {
+            display: flex;
+            /* Define o display como flexível */
+            align-items: center;
+            /* Alinha os itens ao centro */
+            border: 1px solid #CCCCCC;
+            /* Define a borda da notícia */
+            border-radius: 10px;
+            /* Define o raio da borda */
+            padding: 10px;
+            /* Define o espaçamento interno */
+            margin-bottom: 10px;
+            /* Define a margem inferior */
+        }
+
+        /* Define o estilo da imagem de cada notícia */
+        .news-image {
+            width: 150px;
+            /* Define a largura da imagem */
+            height: 150px;
+            /* Define a altura da imagem */
+            margin-right: 10px;
+            /* Define a margem direita */
+        }
+
+        /* Define o estilo do conteúdo de cada notícia */
+        .news-content {
+            font-family: Arial, sans-serif;
+            /* Define a fonte do texto */
+            color: #333333;
+            /* Define a cor da fonte */
+        }
+
+        /* Define o estilo do título de cada notícia */
+        .news-title {
+            font-size: 24px;
+            /* Define o tamanho da fonte */
+            font-weight: bold;
+            /* Define o peso da fonte */
+            margin-bottom: 5px;
+            /* Define a margem inferior */
+        }
+
+        /* Define o estilo do resumo de cada notícia */
+        .news-summary {
+            font-size: 18px;
+            /* Define o tamanho da fonte */
+            margin-bottom: 5px;
+            /* Define a margem inferior */
+        }
+
+        /* Define o estilo do link de cada notícia */
+        .news-link {
+            font-size: 16px;
+            /* Define o tamanho da fonte */
+            color: blue;
+            /* Define a cor da fonte */
+            text-decoration: none;
+            /* Remove o sublinhado da fonte */
+        }
+
+        /* Define o estilo do link de cada notícia quando o mouse passa sobre ele */
+        .news-link:hover {
+            text-decoration: underline;
+            /* Adiciona o sublinhado da fonte */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cria o container do feed -->
+    <div class="container">
+
+        <a href="principal.html">Voltar</a>
+        <!-- Cria o cabeçalho do feed -->
+        <div class="header">
+            Feed de Notícias sobre Saúde
+        </div>
+        <!-- Cria a primeira notícia do feed -->
+        <div class="news">
+            <!-- Cria a imagem da notícia -->
+            <img src="https://www.brasilcode.com.br/wp-content/uploads/2020/05/html-css.jpg" alt="HTML e CSS"
+                class="news-image">
+            <!-- Cria o conteúdo da notícia -->
+            <div class="news-content">
+                <!-- Cria o título da notícia -->
+                <div class="news-title">
+                    HTML e CSS: Guia Básico para Iniciantes
+                </div>
+                <!-- Cria o resumo da notícia -->
+                <div class="news-summary">
+                    Aprenda o que é HTML e CSS, como eles se relacionam e como personalizar a estrutura de um site.
+                </div>
+                <!-- Cria o link da notícia -->
+                <a href="https://www.brasilcode.com.br/html-e-css-guia-basico/" class="news-link">Leia mais</a>
+            </div>
+        </div>
+        <!-- Cria a segunda notícia do feed -->
+        <div class="news">
+            <!-- Cria a imagem da notícia -->
+            <img src="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png" alt="MDN Web Docs"
+                class="news-image">
+            <!-- Cria o conteúdo da notícia -->
+            <div class="news-content">
+                <!-- Cria o título da notícia -->
+                <div class="news-title">
+                    CSS básico - Aprendendo desenvolvimento web
+                </div>
+                <!-- Cria o resumo da notícia -->
+                <div class="news-summary">
+                    CSS (Folha de Estilo em Cascata) é o código que você usa para dar estilo à sua página Web. CSS
+                    básico apresenta tudo que você precisa para começar.
+                </div>
+                <!-- Cria o link da notícia -->
+                <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Getting_started_with_the_web/CSS_basics"
+                    class="news-link">Leia mais</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

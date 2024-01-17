@@ -1,0 +1,205 @@
+<!-- Cria a estrutura básica do documento HTML -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Define o título da página -->
+    <title>Configurações do Aplicativo</title>
+    <!-- Define o estilo CSS da página -->
+    <style>
+        /* Define a cor de fundo do corpo da página */
+        body {
+            background-color: #F0F0F0;
+        }
+
+        /* Define o estilo do container da tela */
+        .container {
+            width: 80%;
+            /* Define a largura do container */
+            margin: 0 auto;
+            /* Centraliza o container na página */
+        }
+
+        /* Define o estilo do cabeçalho da tela */
+        .header {
+            text-align: center;
+            /* Alinha o texto ao centro */
+            font-family: Arial, sans-serif;
+            /* Define a fonte do texto */
+            font-size: 36px;
+            /* Define o tamanho da fonte */
+            color: #333333;
+            /* Define a cor da fonte */
+            margin-bottom: 20px;
+            /* Define a margem inferior */
+        }
+
+        /* Define o estilo de cada seção da tela */
+        .section {
+            border: 1px solid #CCCCCC;
+            /* Define a borda da seção */
+            border-radius: 10px;
+            /* Define o raio da borda */
+            padding: 10px;
+            /* Define o espaçamento interno */
+            margin-bottom: 10px;
+            /* Define a margem inferior */
+        }
+
+        /* Define o estilo do título de cada seção */
+        .section-title {
+            font-family: Arial, sans-serif;
+            /* Define a fonte do texto */
+            font-size: 24px;
+            /* Define o tamanho da fonte */
+            font-weight: bold;
+            /* Define o peso da fonte */
+            color: #333333;
+            /* Define a cor da fonte */
+            margin-bottom: 10px;
+            /* Define a margem inferior */
+        }
+
+        /* Define o estilo do conteúdo de cada seção */
+        .section-content {
+            font-family: Arial, sans-serif;
+            /* Define a fonte do texto */
+            font-size: 18px;
+            /* Define o tamanho da fonte */
+            color: #333333;
+            /* Define a cor da fonte */
+        }
+
+        /* Define o estilo de cada item de conteúdo */
+        .section-item {
+            display: flex;
+            /* Define o display como flexível */
+            align-items: center;
+            /* Alinha os itens ao centro */
+            margin-bottom: 5px;
+            /* Define a margem inferior */
+        }
+
+        /* Define o estilo do rótulo de cada item */
+        .section-label {
+            width: 150px;
+            /* Define a largura do rótulo */
+            margin-right: 10px;
+            /* Define a margem direita */
+        }
+
+        /* Define o estilo do botão de salvar */
+        .save-button {
+            display: block;
+            /* Define o display como bloco */
+            width: 100px;
+            /* Define a largura do botão */
+            height: 40px;
+            /* Define a altura do botão */
+            background-color: #00FF00;
+            /* Define a cor de fundo do botão */
+            border: none;
+            /* Remove a borda do botão */
+            border-radius: 10px;
+            /* Define o raio da borda */
+            font-family: Arial, sans-serif;
+            /* Define a fonte do texto */
+            font-size: 18px;
+            /* Define o tamanho da fonte */
+            font-weight: bold;
+            /* Define o peso da fonte */
+            color: white;
+            /* Define a cor da fonte */
+            margin: 0 auto;
+            /* Centraliza o botão na página */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cria o container da tela -->
+    <div class="container">
+        <!-- Cria o cabeçalho da tela -->
+        <div class="header">
+            Configurações do Aplicativo
+        </div>
+        <!-- Cria a primeira seção da tela -->
+        <div class="section">
+            <!-- Cria o título da seção -->
+            <div class="section-title">
+                Configurações Pessoais
+            </div>
+            <!-- Cria o conteúdo da seção -->
+            <div class="section-content">
+                <!-- Cria o primeiro item de conteúdo -->
+                <div class="section-item">
+                    <!-- Cria o rótulo do item -->
+                    <div class="section-label">
+                        Nome:
+                    </div>
+                    <!-- Cria o campo de texto do item -->
+                    <input type="text" name="name" value="João Silva">
+                </div>
+                <!-- Cria o segundo item de conteúdo -->
+                <div class="section-item">
+                    <!-- Cria o rótulo do item -->
+                    <div class="section-label">
+                        Idade:
+                    </div>
+                    <!-- Cria o campo de texto do item -->
+                    <input type="number" name="age" value="35">
+                </div>
+                <!-- Cria o terceiro item de conteúdo -->
+                <div class="section-item">
+                    <!-- Cria o rótulo do item -->
+                    <div class="section-label">
+                        Condição Médica:
+                    </div>
+                    <!-- Cria o campo de texto do item -->
+                    <input type="text" name="condition" value="Diabetes">
+                </div>
+            </div>
+        </div>
+        <!-- Cria a segunda seção da tela -->
+        <div class="section">
+            <!-- Cria o título da seção -->
+            <div class="section-title">
+                Preferências de Notificação
+            </div>
+            <!-- Cria o conteúdo da seção -->
+            <div class="section-content">
+                <!-- Cria o primeiro item de conteúdo -->
+                <div class="section-item">
+                    <!-- Cria o rótulo do item -->
+                    <div class="section-label">
+                        Som:
+                    </div>
+                    <!-- Cria a caixa de seleção do item -->
+                    <input type="checkbox" name="sound" checked>
+                </div>
+                <!-- Cria o segundo item de conteúdo -->
+                <div class="section-item">
+                    <!-- Cria o rótulo do item -->
+                    <div class="section-label">
+                        Vibração:
+                    </div>
+                    <!-- Cria a caixa de seleção do item -->
+                    <input type="checkbox" name="vibration" checked>
+                </div>
+                <!-- Cria o terceiro item de conteúdo -->
+                <div class="section-item">
+                    <!-- Cria o rótulo do item -->
+                    <div class="section-label">
+                        Repetição:
+                    </div>
+                    <!-- Cria o campo de texto do item -->
+                    <input type="number" name="repeat" value="3">
+                </div>
+            </div>
+        </div>
+        <!-- Cria o botão de salvar -->
+        <button class="save-button"> <a href="principal.html">Salvar</a></button>
+    </div>
+</body>
+
+</html>

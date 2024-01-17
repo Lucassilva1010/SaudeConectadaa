@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link href="estilo.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+
+
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        h1 {
+            color: blue;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 36px;
+        }
+
+        .secao {
+            border: 1px solid gray;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        h2 {
+            color: black;
+            text-align: left;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+        }
+
+        p {
+            color: black;
+            text-align: left;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        li {
+            color: black;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    </style>
+</head>
+<html>
+
+<body>
+    <div class="container">
+        <a href="principal.html"> Volta a pagina principal</a>
+        <h1>Paracetamol</h1>
+        <div class="secao">
+            <h2>Instruções de Uso</h2>
+            <p>O paracetamol é um analgésico e antipirético, usado para aliviar a dor e a febre.</p>
+            <ul>
+                <li>A dose recomendada para adultos é de 500 mg a 1 g, a cada 4 a 6 horas, não ultrapassando 4 g por
+                    dia.</li>
+                <li>A dose recomendada para crianças é de 10 a 15 mg por kg de peso, a cada 4 a 6 horas, não
+                    ultrapassando 60 mg por kg de peso por dia.</li>
+                <li>O paracetamol pode ser tomado com ou sem alimentos, mas deve ser ingerido com água.</li>
+                <li>Não tome mais do que a dose indicada, nem por mais tempo do que o recomendado.</li>
+                <li>Consulte seu médico antes de tomar paracetamol se você tiver problemas hepáticos, renais, alérgicos
+                    ou de sangramento.</li>
+            </ul>
+        </div>
+        <div class="secao">
+            <h2>Efeitos Colaterais</h2>
+            <p>O paracetamol geralmente é bem tolerado, mas pode causar alguns efeitos colaterais em casos raros ou em
+                doses excessivas.</p>
+            <table>
+                <tr>
+                    <th>Efeito Colateral</th>
+                    <th>Gravidade</th>
+                    <th>Probabilidade</th>
+                </tr>
+                <tr>
+                    <td>Náusea</td>
+                    <td>Baixa</td>
+                    <td>Rara</td>
+                </tr>
+                <tr>
+                    <td>Dor de cabeça</td>
+                    <td>Baixa</td>
+                    <td>Rara</td>
+                </tr>
+                <tr>
+                    <td>Erupção cutânea</td>
+                    <td>Média</td>
+                    <td>Rara</td>
+                </tr>
+                <tr>
+                    <td>Anemia</td>
+                    <td>Média</td>
+                    <td>Rara</td>
+                </tr>
+                <tr>
+                    <td>Lesão hepática</td>
+                    <td>Alta</td>
+                    <td>Muito rara</td>
+                </tr>
+            </table>
+        </div>
+        <div class="secao">
+            <h2>Gráficos Interativos</h2>
+            <p>Aqui você pode ver alguns gráficos que ilustram o funcionamento do paracetamol no seu organismo.</p>
+            <div class="graficos">
+                <canvas id="grafico1"></canvas>
+                <canvas id="grafico2"></canvas>
+                <canvas id="grafico3"></canvas>
+            </div>
+        </div>
+    </div>
+    <script>
+        var ctx1 = document.getElementById('grafico1').getContext('2d');
+        var grafico1 = new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['0h', '1h', '2h', '3h', '4h', '5h', '6h'],
+                datasets: [{
+                    label: 'Concentração de Paracetamol no Sangue (mg/L)',
+                    data: [0, 10, 15, 12, 8, 5, 3],
+                    backgroundColor: 'rgba(0, 0, 255, 0.2)',
+                    borderColor: 'rgba(0, 0, 255, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var ctx2 = document.getElementById('grafico2').getContext('2d');
+        var grafico2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Paracetamol', 'Ibuprofeno', 'Aspirina'],
+                datasets: [{
+                    label: 'Eficácia na Redução da Dor (%)',
+                    data: [80, 75, 70],
+                    backgroundColor: [
+                        'rgba(0, 0, 255, 0.2)',
+                        'rgba(0, 255, 0, 0.2)',
+                        'rgba(255, 0, 0, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 0, 255, 1)',
+                        'rgba(0, 255, 0, 1)',
+                        'rgba(255, 0, 0, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var ctx3 = document.getElementById('grafico3').getContext('2d');
+        var grafico3 = new Chart(ctx3, {
+            type: 'pie',
+            data: {
+                labels: ['Sem Efeitos Colaterais', 'Com Efeitos Colaterais'],
+                datasets: [{
+                    label: 'Probabilidade de Ocorrência de Efeitos Colaterais (%)',
+                    data: [99, 1],
+                    backgroundColor: [
+                        'rgba(0, 255, 0, 0.2)',
+                        'rgba(255, 0, 0, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 255, 0, 1)',
+                        'rgba(255, 0, 0, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+</body>
+
+</html>
