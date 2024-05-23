@@ -1,233 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
+  <meta charset="utf-8">
+  <title>Saúde Conectada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0px;
-        }
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            font-family: Arial, sans-serif;
-        }
+<style type="text/css">
+        body {
+      color: #797979;
+      background: #f1f2f7;
+      font-family: 'Open Sans', sans-serif;
+      padding: 0px !important;
+      margin: 0px !important;
+      font-size: 13px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+  }
 
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            height: 80px;
-            padding: 100px;
-            background-color: #f0f0f0;
-            border-bottom: 1px solid #cccccc;
-        }
+  .profile-nav, .profile-info{
+      margin-top:30px;   
+  }
 
-        .header-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+  .profile-nav .user-heading {
+      background: #007bff;
+      color: #fff;
+      border-radius: 4px 4px 0 0;
+      -webkit-border-radius: 4px 4px 0 0;
+      padding: 30px;
+      text-align: center;
+  }
 
-        .header-name {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333333;
-            margin-left: 10px;
-        }
+  .profile-nav .user-heading.round a  {
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border: 10px solid rgba(255,255,255,0.3);
+      display: inline-block;
+  }
 
-        .header-id {
-            font-size: 18px;
-            color: #999999;
-            margin-left: 10px;
-        }
+  .profile-nav .user-heading a img {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+  }
 
-        .header-button {
-            width: 120px;
-            height: 40px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0099ff;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-        }
+  .profile-nav .user-heading h1 {
+      font-size: 22px;
+      font-weight: 300;
+      margin-bottom: 5px;
+  }
 
-        .section {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            padding: 20px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #cccccc;
-        }
+  .profile-nav .user-heading p {
+      font-size: 12px;
+  }
 
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333333;
-            margin-bottom: 10px;
-        }
+  .profile-nav ul {
+      margin-top: 1px;
+  }
 
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+  .profile-nav ul > li {
+      border-bottom: 1px solid #ebeae6;
+      margin-top: 0;
+      line-height: 30px;
+  }
 
-        .section-item {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-        }
+  .profile-nav ul > li:last-child {
+      border-bottom: none;
+  }
 
-        .section-item-label {
-            font-size: 16px;
-            color: #999999;
-            margin-bottom: 5px;
-        }
+  .profile-nav ul > li > a {
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      color: #89817f;
+      border-left: 5px solid #fff;
+  }
 
-        .section-item-value {
-            font-size: 16px;
-            color: #333333;
-        }
+  .profile-nav ul > li > a:hover, .profile-nav ul > li > a:focus, .profile-nav ul li.active  a {
+      background: #f8f7f5 !important;
+      border-left: 5px solid #007bff;
+      color: #89817f !important;
+  }
 
-        .header-menu {
-            display: flex;
-            gap: 10px;
-        }
+  .profile-nav ul > li:last-child > a:last-child {
+      border-radius: 0 0 4px 4px;
+      -webkit-border-radius: 0 0 4px 4px;
+  }
 
-        .header-menu-item {
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0099ff;
-            color: #ffffff;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    </style>
+  .profile-nav ul > li > a > i{
+      font-size: 16px;
+      padding-right: 10px;
+      color: #bcb3aa;
+  }
+
+  .r-activity {
+      margin: 6px 0 0;
+      font-size: 12px;
+  }
+
+
+  .p-text-area, .p-text-area:focus {
+      border: none;
+      font-weight: 300;
+      box-shadow: none;
+      color: #c3c3c3;
+      font-size: 16px;
+  }
+
+  .profile-info .panel-footer {
+      background-color:#007bff ;
+      border-top: 1px solid #e7ebee;
+  }
+
+  .profile-info .panel-footer ul li a {
+      color: #7a7a7a;
+  }
+
+  .bio-graph-heading {
+      background: #007bff;
+      color: #fff;
+      text-align: center;
+      font-style: italic;
+      padding: 40px 110px;
+      border-radius: 4px 4px 0 0;
+      -webkit-border-radius: 4px 4px 0 0;
+      font-size: 16px;
+      font-weight: 300;
+  }
+
+  .bio-graph-info {
+      color: #89817e;
+  }
+
+  .bio-graph-info h1 {
+      font-size: 22px;
+      font-weight: 300;
+      margin: 0 0 20px;
+  }
+
+  .medical_history h3 {
+      font-size: 22px;
+      font-weight: 300;
+      margin: 20px;
+  }
+
+  .bio-row {
+      width: 50%;
+      float: left;
+      margin-bottom: 10px;
+      padding:0 15px;
+  }
+
+  .bio-row p span {
+      width: 100px;
+      display: inline-block;
+  }
+
+  .bio-chart, .bio-desk {
+      float: left;
+  }
+
+  .bio-chart {
+      width: 40%;
+  }
+
+  .bio-desk {
+      width: 60%;
+  }
+
+  .bio-desk h4 {
+      font-size: 15px;
+      font-weight:400;
+  }
+
+  .bio-desk h4.terques {
+      color: #4CC5CD;
+  }
+
+  .bio-desk h4.red {
+      color: #e26b7f;
+  }
+
+  .bio-desk h4.green {
+      color: #97be4b;
+  }
+
+  .bio-desk h4.purple {
+      color: #caa3da;
+  }
+
+  .file-pos {
+      margin: 6px 0 10px 0;
+  }
+
+  .profile-activity h5 {
+      font-weight: 300;
+      margin-top: 0;
+      color: #c3c3c3;
+  }
+
+  .summary-head {
+      background: #ee7272;
+      color: #fff;
+      text-align: center;
+      border-bottom: 1px solid #ee7272;
+  }
+
+  .summary-head h4 {
+      font-weight: 300;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+  }
+
+  .summary-head p {
+      color: rgba(255,255,255,0.6);
+  }
+
+  ul.summary-list {
+      display: inline-block;
+      padding-left:0 ;
+      width: 100%;
+      margin-bottom: 0;
+  }
+
+  ul.summary-list > li {
+      display: inline-block;
+      width: 19.5%;
+      text-align: center;
+  }
+
+  ul.summary-list > li > a > i {
+      display:block;
+      font-size: 18px;
+      padding-bottom: 5px;
+  }
+
+  ul.summary-list > li > a {
+      padding: 10px 0;
+      display: inline-block;
+      color: #818181;
+  }
+
+  ul.summary-list > li  {
+      border-right: 1px solid #eaeaea;
+  }
+
+  ul.summary-list > li:last-child  {
+      border-right: none;
+  }
+
+  .activity {
+      width: 100%;
+      float: left;
+      margin-bottom: 10px;
+  }
+
+  .activity.alt {
+      width: 100%;
+      float: right;
+      margin-bottom: 10px;
+  }
+
+  .activity span {
+      float: left;
+  }
+
+  .activity.alt span {
+      float: right;
+  }
+  .activity span, .activity.alt span {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      background: #eee;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+  }
+
+  .activity.terques span {
+      background: #8dd7d6;
+  }
+
+  .activity.terques h4 {
+      color: #8dd7d6;
+  }
+  .activity.purple span {
+      background: #b984dc;
+  }
+
+  .activity.purple h4 {
+      color: #b984dc;
+  }
+  .activity.blue span {
+      background: #90b4e6;
+  }
+
+  .activity.blue h4 {
+      color: #90b4e6;
+  }
+  .activity.green span {
+      background: #aec785;
+  }
+
+  .activity.green h4 {
+      color: #aec785;
+  }
+
+  .activity h4 {
+      margin-top:0 ;
+      font-size: 16px;
+  }
+
+  .activity p {
+      margin-bottom: 0;
+      font-size: 13px;
+  }
+
+  .activity .activity-desk i, .activity.alt .activity-desk i {
+      float: left;
+      font-size: 18px;
+      margin-right: 10px;
+      color: #bebebe;
+  }
+
+  .activity .activity-desk {
+      margin-left: 70px;
+      position: relative;
+  }
+
+  .activity.alt .activity-desk {
+      margin-right: 70px;
+      position: relative;
+  }
+
+  .activity.alt .activity-desk .panel {
+      float: right;
+      position: relative;
+  }
+
+  .activity-desk .panel {
+      background: #F4F4F4 ;
+      display: inline-block;
+  }
+
+
+  .activity .activity-desk .arrow {
+      border-right: 8px solid #F4F4F4 !important;
+  }
+  .activity .activity-desk .arrow {
+      border-bottom: 8px solid transparent;
+      border-top: 8px solid transparent;
+      display: block;
+      height: 0;
+      left: -7px;
+      position: absolute;
+      top: 13px;
+      width: 0;
+  }
+
+  .activity-desk .arrow-alt {
+      border-left: 8px solid #F4F4F4 !important;
+  }
+
+  .activity-desk .arrow-alt {
+      border-bottom: 8px solid transparent;
+      border-top: 8px solid transparent;
+      display: block;
+      height: 0;
+      right: -7px;
+      position: absolute;
+      top: 13px;
+      width: 0;
+  }
+
+  .activity-desk .album {
+      display: inline-block;
+      margin-top: 10px;
+  }
+
+  .activity-desk .album a{
+      margin-right: 10px;
+  }
+
+  .activity-desk .album a:last-child{
+      margin-right: 0px;
+  }
+
+  .order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#4099ff,#73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+.panel_style{
+  padding: 10px;
+}
+  
+</style>
 </head>
-
-<html>
-
-<head>
-
-</head>
-
 <body>
-
-    <div class="container">
-        <div class="header">
-            <div class="header-menu">
-                <button class="header-menu-item"><a href="Promo.html">💰</a></button>
-                <button class="header-menu-item"><a href="info.html">📄</a></button>
-                <button class="header-menu-item"><a href="noticias.html">📺</a></button>
-                <button class="header-menu-item"><a href="perfil.html">⚙️</a></button>
-            </div>
-            <div class="header-info">
-                <img src="src/img/login.avif" alt="Patient" class="header-image">
-                <div class="header-name">João da Silva</div>
-                <div class="header-id">ID: 123456789</div>
-            </div>
-            <button class="header-button"><a href="editarPerfil.html" class="header-button">Editar Perfil</a></button>
-        </div>
-        <div class="section">
-            <div class="section-title">Dados Pessoais</div>
-            <div class="section-content">
-                <div class="section-item">
-                    <div class="section-item-label">Idade</div>
-                    <div class="section-item-value">35 anos</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Sexo</div>
-                    <div class="section-item-value">Masculino</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Estado Civil</div>
-                    <div class="section-item-value">Casado</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Endereço</div>
-                    <div class="section-item-value">Rua das Flores, 123, Simões - PI</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Telefone</div>
-                    <div class="section-item-value">(89) 99999-9999</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">E-mail</div>
-                    <div class="section-item-value">joao@gmail.com</div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-title">Histórico Médico</div>
-            <div class="section-content">
-                <div class="section-item">
-                    <div class="section-item-label">Doenças Crônicas</div>
-                    <div class="section-item-value">Diabetes, Hipertensão</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Cirurgias</div>
-                    <div class="section-item-value">Apendicectomia, Herniorrafia</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Medicamentos em Uso</div>
-                    <div class="section-item-value">Metformina, Losartana</div>
-                    <div class="section-item-value"><a href="principal.html">Historico de medicamentos</a></div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Alergias</div>
-                    <div class="section-item-value">Penicilina, Camarão</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Vacinas</div>
-                    <div class="section-item-value">Febre Amarela, Hepatite B, Tríplice Viral</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Exames</div>
-                    <div class="section-item-value">Hemograma, Glicemia, Colesterol, Eletrocardiograma</div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-title">Preferências</div>
-            <div class="section-content">
-                <div class="section-item">
-                    <div class="section-item-label">Horários</div>
-                    <div class="section-item-value">Manhã, Tarde</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Médicos</div>
-                    <div class="section-item-value">Dr. José, Dra. Maria</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Especialidades</div>
-                    <div class="section-item-value">Clínica Geral, Cardiologia, Endocrinologia</div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-label">Planos de Saúde</div>
-                    <div class="section-item-value">Unimed, Amil</div>
-                </div>
-            </div>
-        </div>
+  
+<div class="container bootstrap snippets bootdey">
+  <div class="row">
+      <div class="profile-nav col-md-3">
+          <div class="panel panel_style">
+              <div class="user-heading round">
+              <a href="#">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt>
+              </a>
+              <h1>Camila </h1>
+          </div>
+      <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="#"> <i class="fa fa-user"></i> Perfil</a></li>
+          <li><a href="#"> <i class="fa fa-edit"></i> Editar Perfil</a></li>
+      </ul>
     </div>
-</body>
+      </div>
+    <div class="profile-info col-md-9">
+        <div class="panel panel_style">
+            <div class="bio-graph-heading">
+                Esse é seu Perfil no Saúde Conectada
+            </div>
+            <div class="panel-body bio-graph-info">
+                <h1>Dados Pessoais</h1>
+            <div class="row">
+              <div class="bio-row">
+                <p><span>Primeiro nome </span>: Camila</p>
+              </div>
+              <div class="bio-row">
+                <p><span>Sobrenome </span>: Smith</p>
+              </div>
+              <div class="bio-row">
+                  <p><span>País </span>: Brasil</p>
+              </div>
+              <div class="bio-row">
+                  <p><span>Data de Nascimento</span>: 13 Julho 1990</p>
+                </div>
+                <div class="bio-row">
+                    <p><span>Estado Civil </span>: Solteira(o)</p>
+                </div>
+                <div class="bio-row">
+                  <p><span>Email </span>: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="09637a64607d61496f65687d65686b276a6664">email@gmail.com</a></p>
+                </div>
+                <div class="bio-row">
+                    <p><span>WhatsApp </span>: (89) 9 99912-3456 </p>
+                </div>  
+              </div>
 
+  
+              <div class="row">
+                <h3>Histórico Médico</h3>
+                  <div class="row">
+                    <div class="col-md-4 col-xl-3">
+                      <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                          <h6 class="m-b-20">Doenças Crônicas</h6>
+                          <h2 class="text-right"><i class="fa fa-medkit f-left"></i><span>2</span></h2>
+                          <p class="m-b-0">Diabetes e Hipertensão</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                      <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                          <h6 class="m-b-20">Cirurgias</h6>
+                          <h2 class="text-right"><i class="fa fa-medkit f-left"></i><span>2</span></h2>
+                          <p class="m-b-0">Apendicectomia, Herniorrafia</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                      <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                          <h6 class="m-b-20">Medicamentos em Uso</h6>
+                          <h2 class="text-right"><i class="fa fa-medkit f-left"></i><span>2</span></h2>
+                          <p class="m-b-0">Metformina, Losartana</p>
+                         <div><a href="principal.html">Historico de medicamentos</a></div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4 col-xl-3">
+                      <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                          <h6 class="m-b-20">Alergias</h6>
+                          <h2 class="text-right"><i class="fa fa-medkit f-left"></i><span>2</span></h2>
+                          <p class="m-b-0">Penicilina, Camarão</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                      <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                          <h6 class="m-b-20">Vacinas</h6>
+                          <h2 class="text-right"><i class="fa fa-medkit f-left"></i><span>3</span></h2>
+                          <p class="m-b-0">Febre Amarela, Hepatite B, Tríplice Viral</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                      <div class="card bg-c-blue order-card">
+                        <div class="card-block">
+                          <h6 class="m-b-20">Exames</h6>
+                          <h2 class="text-right"><i class="fa fa-medkit f-left"></i><span>4</span></h2>
+                          <p class="m-b-0">Hemograma, Glicemia, Colesterol, Eletrocardiograma</p>
+                         <div><a href="principal.html">Historico de medicamentos</a></div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="row p-4">
+                <h3 >Preferências</h3>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Horários</th>
+                    <th scope="col">Médicos</th>
+                    <th scope="col">Especialidades</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="table-active">
+                    <th scope="row">1</th>
+                    <td>Manhã</td>
+                    <td>Dra. Maria</td>
+                    <td>Cardiologia</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Tarde</td>
+                    <td>Dr. José</td>
+                    <td>Clínica Geral</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2" class="table-active"></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      <div>
+   
+  </div>
+   
+</div>
+
+ </body>
 </html>
