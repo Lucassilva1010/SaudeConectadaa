@@ -1,288 +1,242 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<html>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> Saúde Conectada </title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
-<head>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+	<!-- CSS here -->
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="assets/css/flaticon.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            font-family: Arial, sans-serif;
-        }
+  <style>
+   .header-menu {
+        display: flex;
+        gap: 10px;
+      }
 
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
-            height: 120px;
-            padding: 10px;
-            background-color: #f0f0f0;
-            border-bottom: 1px solid #cccccc;
-        }
+    .header-menu-item {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0099ff;
+      color: #ffffff;
+      font-size: 20px;
+      cursor: pointer;
+    }
 
-        .header-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+  </style>
 
-        .header-name {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333333;
-            margin-left: 10px;
-        }
-
-        .header-menu {
-            display: flex;
-            gap: 10px;
-        }
-
-        .header-menu-item {
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0099ff;
-            color: #ffffff;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .section {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            padding: 20px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #cccccc;
-        }
-
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333333;
-            margin-bottom: 10px;
-        }
-
-        .section-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .section-item {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            height: 100px;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            padding: 10px;
-        }
-
-        .section-item-icon {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            margin-right: 10px;
-        }
-
-        .section-item-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .section-item-name {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333333;
-        }
-
-        .section-item-dosage {
-            font-size: 14px;
-            color: #999999;
-        }
-
-        .section-item-frequency {
-            font-size: 14px;
-            color: #999999;
-        }
-
-        .section-item-time {
-            font-size: 18px;
-            font-weight: bold;
-            color: #0099ff;
-        }
-
-        .section-item-reminder {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .section-item-reminder-button {
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0099ff;
-            color: #ffffff;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .section-item-notification {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .section-item-notification-text {
-            font-size: 16px;
-            color: #333333;
-        }
-
-        .section-item-notification-icon {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            margin-right: 10px;
-        }
-
-        .section-item-critical {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .section-item-critical-text {
-            font-size: 16px;
-            font-weight: bold;
-            color: #ff0000;
-        }
-
-        .section-item-critical-icon {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            margin-right: 10px;
-        }
-    </style>
 </head>
 
-<body>
+<!-- Profile 1 - Bootstrap Brain Component -->
+<section class="bg-light py-3 py-md-5 py-xl-8">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <h2 class="mb-4 display-5 text-center">Histórico de Medicamentos</h2>
+        <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+      </div>
+    </div>
+  </div>
 
-    <div class="container">
-        <div class="header">
-            <div class="header-info">
-                <img src="src/img/login.avif" alt="User" class="header-image">
-                <div class="header-name">Camila da Silva</div>
+  <div class="container">
+    <div class="row gy-4 gy-lg-0">
+      <div class="col-12 col-lg-4 col-xl-3">
+        <div class="row gy-4">
+          <div class="col-12">
+            <div class="card widget-card border-light shadow-sm">
+              <div class="card-header text-bg-primary"> Camila da Silva</div>
+              <div class="card-body">
+                <div class="text-center mb-3">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="img-fluid rounded-circle" alt="Luna John">
+                </div>
+                <h5 class="text-center mb-1">Camila da Silva</h5>
+                <p class="text-center text-secondary mb-4">Project Manager</p>
+               
+              </div>
+            </div>
+          </div>
+       
+          <div class="col-12">
+            <div class="card widget-card border-light shadow-sm">
+              <div class="card-header text-bg-primary">Sobre</div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush mb-0">
+                
+                  <li class="list-group-item">
+                    <h6 class="mb-1">
+                      <span class="bii bi-geo-alt-fill me-2"></span>
+                      Localização
+                    </h6>
+                    <span>Marcolânida, Piauí</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+      <div class="col-12 col-lg-8 col-xl-9">
+        <div class="card widget-card border-light shadow-sm">
+          <div class="card-body p-4">
+            <ul class="nav nav-tabs" id="profileTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-tab-pane" type="button" role="tab" aria-controls="overview-tab-pane" aria-selected="true">Medicamentos</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Lembretes</button>
+              </li>
+            </ul>
+            <div class="tab-content pt-4" id="profileTabContent">
+              <div class="tab-pane fade show active" id="overview-tab-pane" role="tabpanel" aria-labelledby="overview-tab" tabindex="0">
+                  <div class="col-xl-6 col-md-12 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between p-md-1">
+                          <div class="d-flex flex-row">
+                            <div class="align-self-center">
+                              <img decoding="async" class="p-2" src="https://themes.hibootstrap.com/hospa/wp-content/uploads/2024/03/pill.png" alt="icon">
+                            </div>
+                            <div>
+                              <a href="detalhesMedicamentos.html"><h4>Paracetamol</h4></a>
+                              <div class="section-item-frequency link-primary"><a href="rastroDoses.html">Dosagens</a></div>
+                            </div>
+                          </div>
+                          <div class="align-self-center">
+                            <h2 class="h1 mb-0">500 mg</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-md-12 mb-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between p-md-1">
+                          <div class="d-flex flex-row">
+                            <div class="align-self-center">
+                              <img decoding="async" class="p-2" src="https://themes.hibootstrap.com/hospa/wp-content/uploads/2024/03/pill.png" alt="icon">
+                            </div>
+                            <div>
+                              <a href="detalhesMedicamentos.html"><h4>Losartana</h4></a>
+                              <div class="section-item-frequency link-primary"><a href="rastroDoses.html">Dosagens</a></div>
+                            </div>
+                          </div>
+                          <div class="align-self-center">
+                            <h2 class="h1 mb-0">50 mg</h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <div class="col-xl-6 col-md-12 mb-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between p-md-1">
+                        <div class="d-flex flex-row">
+                          <div class="align-self-center">
+                            <i class="fa fa-comment-alt text-primary fa-3x me-4"></i>
+                          </div>
+                          <div>
+                            <h4>Paracetamol</h4>
+                            <p class="mb-0 text-primary">Tomar de 8 em 8 horas</p>
+                          </div>
+                        </div>
+                        <div class="align-self-center">
+                          <h2 class="h1 mb-0">500 mg</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="header-menu">
-                <button class="header-menu-item"><a href="Promo.html">💰</a></button>
-                <button class="header-menu-item"><a href="info.html">📄</a></button>
-                <button class="header-menu-item"><a href="noticias.html">📺</a></button>
-                <button class="header-menu-item"><a href="perfil.html">⚙️</a></button>
-            </div>
+              <button class="header-menu-item"><a href="Promo.html">💰</a></button>
+              <button class="header-menu-item"><a href="info.html">📄</a></button>
+              <button class="header-menu-item"><a href="noticias.html">📺</a></button>
+              <button class="header-menu-item"><a href="perfil.html">⚙️</a></button>
+          </div>
         </div>
-        <div class="section">
-            <div class="section-title">Medicamentos</div>
-            <div class="section-content">
-                <div class="section-item">
-                    <div class="section-item-info">
-                        <div class="section-item-name"><a href="detalhesMedicamentos.html">Paracetamol</a></div>
-                        <div class="section-item-dosage">500 mg</div>
-                        <div class="section-item-frequency"><a href="rastroDoses.html">Dosagens</a></div>
+          <div class="card-body p-4">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Notificações</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Informações Críticas</button>
+              </li>
+              
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="col-xl-6 col-md-12 mb-4">
+                  <div class="card mt-2">
+                    <div class="card-body">
+                      <div class="d-flex p-md-1">
+                        <div class="d-flex flex-row">
+                          <div class="align-self-center">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                          </div>
+                          
+                        </div>
+                        <div class="align-self-center">
+                          <p class="text-justify ms-4">Receita Online</p>
+                        </div>
+                      </div>
                     </div>
-                    <img src="src/img/paracetamol.webp" alt="Metformina" class="section-item-icon">
-                </div>
-                <div class="section-item">
-                    <div class="section-item-info">
-                        <div class="section-item-name"><a href="">Losartana</a></div>
-                        <div class="section-item-dosage">50 mg</div>
-                        <div class="section-item-frequency"><a href="rastroDoses.html">Dosagens</a></div>
+                  </div>
+                  <div class="card mt-2">
+                    <div class="card-body">
+                      <div class="d-flex p-md-1">
+                        <div class="d-flex flex-row">
+                          <div class="align-self-center">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                          </div>
+                          
+                        </div>
+                        <div class="align-self-center">
+                          <p class="text-justify ms-4">Consulpta para Amannhã </p>
+                        </div>
+                      </div>
                     </div>
-                    <img src="src/Losartana.jpg" alt="Losartana" class="section-item-icon">
+                  </div>
                 </div>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="card mt-2">
+                  <div class="card-body">
+                    <div class="d-flex p-md-1">
+                      <div class="d-flex flex-row">
+                        <div class="align-self-center">
+                          <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                        </div>
+                        
+                      </div>
+                      <div class="align-self-center">
+                        <p class="text-justify ms-4">Não tome Metformina com álcool</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>  
         </div>
-        <div class="section">
-            <div class="section-title">Lembretes</div>
-            <div class="section-content">
-                <div class="section-item">
-                    <div class="section-item-info">
-                        <div class="section-item-name">Paracetamol</div>
-                        <div class="section-item-time">08:00</div>
-                    </div>
-                    <div class="section-item-reminder">
-                        <button class="section-item-reminder-button">✔️</button>
-                        <button class="section-item-reminder-button">❌</button>
-                    </div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-info">
-                        <div class="section-item-name">Losartana</div>
-                        <div class="section-item-time">12:00</div>
-                    </div>
-                    <div class="section-item-reminder">
-                        <button class="section-item-reminder-button">✔️</button>
-                        <button class="section-item-reminder-button">❌</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-title">Notificações</div>
-            <div class="section-content">
-                <div class="section-item">
-                    <div class="section-item-notification">
-                        <div class="section-item-notification-text">Receita Online</div>
-                        <img src="src/img/prescription.webp" alt="Prescription" class="section-item-notification-icon">
-                    </div>
-                </div>
-                <div class="section-item">
-                    <div class="section-item-notification">
-                        <div class="section-item-notification-text">Consulta marcada para amanhã</div>
-                        <img src="src/img/1000_F_441981001_c9OPcAvSEBd92TsFgcZzbggzZvDsXCp2.jpg" alt="Calendar"
-                            class="section-item-notification-icon">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="section-title">Informações Críticas</div>
-            <div class="section-content">
-                <div class="section-item">
-                    <div class="section-item-critical">
-                        <div class="section-item-critical-text">Não tome Metformina com álcool</div>
-                        <img src="src/img/warning-warning-sign-icon-warning-sign-illustration-sign-red-warning-700-188633913.jpg"
-                            alt="Warning" class="section-item-critical-icon">
-                    </div>
-                </div>
-                <div class="section-item">
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
 
-</html>
+        
+      </div>
+    </div>
+  </div>
+
+</section>
